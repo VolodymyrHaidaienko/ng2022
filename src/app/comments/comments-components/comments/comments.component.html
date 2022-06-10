@@ -1,0 +1,9 @@
+<form #myForm="ngForm" (ngSubmit)="searchComments(myForm)">
+  <input [(ngModel)]="searchcomments.name" #name="ngModel" name="name">
+  <button>search comments</button>
+</form>
+<h1 *ngIf="storageComment">{{storageComment.email}}</h1>
+<div *ngFor="let com of newCommentsArray">{{com.id}} {{com.name}}</div>
+<hr>
+<app-comment *ngFor="let com of comments" [comment]="com"></app-comment>
+<router-outlet></router-outlet>

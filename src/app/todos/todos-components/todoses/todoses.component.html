@@ -1,0 +1,9 @@
+<form #myform="ngForm">
+  <input [(ngModel)]="todoSearch.title" #title="ngModel" name="title">
+  <button (click)="searchTodo()">search todo</button>
+</form>
+<div *ngIf="todoStorage">{{todoStorage.title}}</div>
+<div *ngFor="let todo of newTodos">{{todo.id}} {{todo.title}}</div>
+<hr>
+<app-todo *ngFor="let too of todoses" [todo]="too"></app-todo>
+<router-outlet></router-outlet>

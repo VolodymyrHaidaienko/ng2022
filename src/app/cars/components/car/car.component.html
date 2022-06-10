@@ -1,0 +1,8 @@
+<p>car works!</p>
+
+<div *ngFor="let car of cars">
+  {{car.id}} {{car.model}} {{car.price}} {{car.year}}
+  <button (click)="delete(car.id)">delete</button>
+
+</div>
+<hr>

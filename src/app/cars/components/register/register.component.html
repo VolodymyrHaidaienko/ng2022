@@ -1,0 +1,10 @@
+<p>register works!</p>
+<form [formGroup]="form">
+  <div>username <input formControlName="username" required></div>
+  <div *ngIf="userNameEror">{{userNameEror}}</div>
+  <div>password <input formControlName="password" required></div>
+  <div>confirmpassword <input formControlName="confirmpassword" required></div>
+  <div *ngIf="form.errors">error</div>
+  <button [disabled]="form.invalid" (click)="register()">register</button>
+</form>
+<router-outlet></router-outlet>

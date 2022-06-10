@@ -1,0 +1,13 @@
+<form #myForm="ngForm">
+  <input [(ngModel)]="searchPosts.title" #title="ngModel" name="title">
+  <button (click)="searchPost()">search post</button>
+</form>
+<div *ngFor="let post of newPosts">{{post.id}} {{post.title}}</div>
+
+<hr>
+<h1>{{postcheck?.body}}</h1>
+<app-post
+  *ngFor="let p of posts"
+  [post]="p"
+(checkPost)="postEmitter($event)"></app-post>
+<router-outlet></router-outlet>

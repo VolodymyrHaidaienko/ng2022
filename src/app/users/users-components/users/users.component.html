@@ -1,0 +1,24 @@
+<form #myForm="ngForm">
+  <input [(ngModel)]="userSearch.id" #id="ngModel" name="id">
+  <input [(ngModel)]="userSearch.name" #name="ngModel" name="name" required>
+  <button (click)="search()" [disabled]="name.invalid">search</button>
+</form>
+
+
+
+
+
+
+<div *ngFor="let user of newFilterUsers">{{user.id}} {{user.name}}</div>
+<h1>{{userCatch.email}}</h1>
+<hr>
+
+<app-user
+  *ngFor="let u of users"
+  [user]="u"
+  (userEmitter)="catchUserEmitt($event)">
+
+</app-user>
+
+<router-outlet></router-outlet>
+

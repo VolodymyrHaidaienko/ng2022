@@ -1,0 +1,16 @@
+<p>cars works!</p>
+<form [formGroup]="form">
+  <div>id<input type="number" formControlName="id"></div>
+  <div>model<input formControlName="model"></div>
+  <div>price<input formControlName="price"></div>
+  <div>year<input formControlName="year"></div>
+  <button (click)="createCar()">click</button>
+  <button (click)="next()">next</button>
+
+</form>
+
+<router-outlet></router-outlet>
+
+
+
+
